@@ -1,4 +1,4 @@
-package org.mastodon.benchmark;
+package org.mastodon.mamut.benchmark;
 
 import java.awt.Dimension;
 import java.nio.file.Paths;

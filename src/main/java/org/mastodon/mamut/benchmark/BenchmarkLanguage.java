@@ -1,4 +1,4 @@
-package org.mastodon.benchmark;
+package org.mastodon.mamut.benchmark;
 
 /**
  * Represents and parses the language that instructs the benchmark what actions to take.

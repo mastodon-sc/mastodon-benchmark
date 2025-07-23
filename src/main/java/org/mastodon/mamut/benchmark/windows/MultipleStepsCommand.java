@@ -1,4 +1,4 @@
-package org.mastodon.benchmark.windows;
+package org.mastodon.mamut.benchmark.windows;
 
 import org.mastodon.benchmark.BenchmarkSetup;
 

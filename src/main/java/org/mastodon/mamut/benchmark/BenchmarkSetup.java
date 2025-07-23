@@ -1,4 +1,4 @@
-package org.mastodon.benchmark;
+package org.mastodon.mamut.benchmark;
 
 import bdv.tools.benchmarks.TimeReporter;
 import net.imagej.ImageJ;

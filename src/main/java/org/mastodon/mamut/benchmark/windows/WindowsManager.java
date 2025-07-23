@@ -1,4 +1,4 @@
-package org.mastodon.benchmark.windows;
+package org.mastodon.mamut.benchmark.windows;
 
 import bdv.viewer.animate.SimilarityTransformAnimator;
 import net.imglib2.realtransform.AffineTransform3D;

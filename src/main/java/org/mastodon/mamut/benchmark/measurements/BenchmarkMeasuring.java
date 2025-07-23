@@ -1,4 +1,4 @@
-package org.mastodon.benchmark.measurements;
+package org.mastodon.mamut.benchmark.measurements;
 
 import bdv.tools.benchmarks.TimeReporter;
 import org.mastodon.benchmark.BenchmarkLanguage;
