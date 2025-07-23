@@ -71,7 +71,7 @@
 		<license.copyrightOwners>Vladimir Ulman</license.copyrightOwners>
 
 		<mastodon.version>1.0.0-beta-34-SNAPSHOT</mastodon.version>
-		<bigdataviewer-core.version>10.6.4-benchmarkPatch</bigdataviewer-core.version>
+		<bigdataviewer-core.version>10.6.4-mastodon-benchmark</bigdataviewer-core.version>
 	</properties>
 
 	<developers>
