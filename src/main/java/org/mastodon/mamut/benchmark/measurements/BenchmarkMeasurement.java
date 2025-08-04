@@ -1,4 +1,4 @@
-package org.mastodon.benchmark.measurements;
+package org.mastodon.mamut.benchmark.measurements;
 
 import java.util.ArrayList;
 import java.util.List;

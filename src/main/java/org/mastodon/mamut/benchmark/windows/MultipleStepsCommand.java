@@ -1,6 +1,6 @@
-package org.mastodon.benchmark.windows;
+package org.mastodon.mamut.benchmark.windows;
 
-import org.mastodon.benchmark.BenchmarkSetup;
+import org.mastodon.mamut.benchmark.BenchmarkSetup;
 
 /**
  * Common API to govern a benchmark action that consists of several consecutive steps.

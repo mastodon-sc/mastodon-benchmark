@@ -1,7 +1,7 @@
-package org.mastodon.benchmark.measurements;
+package org.mastodon.mamut.benchmark.measurements;
 
 import bdv.tools.benchmarks.TimeReporter;
-import org.mastodon.benchmark.BenchmarkLanguage;
+import org.mastodon.mamut.benchmark.BenchmarkLanguage;
 import org.mastodon.mamut.views.bdv.MamutViewBdv;
 import org.mastodon.mamut.views.trackscheme.MamutViewTrackScheme;
 

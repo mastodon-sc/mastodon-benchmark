@@ -1,4 +1,4 @@
-package org.mastodon.benchmark;
+package org.mastodon.mamut.benchmark;
 
 import bdv.tools.benchmarks.TimeReporter;
 import net.imagej.ImageJ;
@@ -7,11 +7,11 @@ import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
-import org.mastodon.benchmark.measurements.BenchmarkMeasuring;
-import org.mastodon.benchmark.windows.MultipleStepsCommand;
-import org.mastodon.benchmark.windows.TrackSchemeBookmarks;
-import org.mastodon.benchmark.windows.TsViewsTransition;
-import org.mastodon.benchmark.windows.WindowsManager;
+import org.mastodon.mamut.benchmark.measurements.BenchmarkMeasuring;
+import org.mastodon.mamut.benchmark.windows.MultipleStepsCommand;
+import org.mastodon.mamut.benchmark.windows.TrackSchemeBookmarks;
+import org.mastodon.mamut.benchmark.windows.TsViewsTransition;
+import org.mastodon.mamut.benchmark.windows.WindowsManager;
 import org.mastodon.mamut.MainWindow;
 import org.mastodon.mamut.ProjectModel;
 import org.mastodon.mamut.io.ProjectLoader;

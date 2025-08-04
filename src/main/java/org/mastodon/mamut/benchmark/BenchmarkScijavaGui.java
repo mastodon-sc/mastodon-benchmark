@@ -1,8 +1,7 @@
-package org.mastodon.benchmark;
+package org.mastodon.mamut.benchmark;
 
 import org.mastodon.mamut.MainWindow;
 import org.mastodon.mamut.ProjectModel;
-import org.mastodon.mamut.experimental.ExperimentalPluginsFacade;
 import org.scijava.command.Command;
 import org.scijava.command.CommandService;
 import org.scijava.plugin.Parameter;
@@ -26,7 +25,7 @@ public class BenchmarkScijavaGui implements Command {
 	 * If this is set to non-null, it takes over the 'mastodonProjectPath'.
 	 * That said, no file is opened and this ProjectModel is used instead.
 	 * This is typically used from within a running Mastodon session,
-	 * see e.g. {@link ExperimentalPluginsFacade#benchmark()}.
+	 * see e.g. {@link org.mastodon.mamut.BenchmarkPluginFacade#benchmark()}.
 	 */
 	@Parameter(persist = false, required = false)
 	ProjectModel projectModel = null;
