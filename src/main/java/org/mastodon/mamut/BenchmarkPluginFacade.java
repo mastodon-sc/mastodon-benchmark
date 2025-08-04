@@ -62,7 +62,7 @@ public class BenchmarkPluginFacade extends AbstractContextual implements MamutPl
 	private static final Map< String, String > menuTexts = new HashMap<>();
 	static
 	{
-		menuTexts.put( EXP_BENCHMARK, "BENCHMARK" );
+		menuTexts.put( EXP_BENCHMARK, "Benchmark" );
 	}
 	@Override
 	public Map< String, String > getMenuTexts() { return menuTexts; }

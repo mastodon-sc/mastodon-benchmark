@@ -12,7 +12,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 
-@Plugin(type = Command.class, name = "Benchmark GUI", menuPath = "Plugins>Mastodon Benchmark")
+@Plugin(type = Command.class, name = "Benchmark GUI", menuPath = "Plugins>Tracking>Mastodon>Benchmark")
 public class BenchmarkScijavaGui implements Command {
 	@Parameter(label = "Mastodon project .mastodon file:", style = FileWidget.OPEN_STYLE,
 	           description = "The benchmark commands are executed over this project whose content thus influences the command execution times.")
