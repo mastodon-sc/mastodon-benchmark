@@ -2,23 +2,35 @@
 # Generates BDV_T / BDV_R / Zoom command sequences for benchmarking a .mastodon project.
 
 # Parameters for regular_vs_irregular
-timepoint_span = range(1, 20)    # Timepoints
-max_bookmarks = 3                # TrackScheme Bookmarks: TS_B1 TS_B2 TS_B3
-rotation_step = 5                # Rotation amount: BDV_R<number>
-rotation_interval = 1            # Include BDV_R every Nth BDV_T event (1 = every, 2 = every 2nd, etc.)
-bdv_t_frequency = 1              # Frequency of BDV_T (e.g., every N timepoints)
-zoom_x = 1                       # Zoom Position 1
-zoom_y = 3                       # Zoom Position 2
-zoom_frames = 10                 # Frames for zoom transition
+#@(label="Time point range from (inclusive):", min="0") int timepoint_span_from = 1
+#@(label="Time point range till (inclusive):", min="0") int timepoint_span_till = 20
+timepoint_span = range(timepoint_span_from, timepoint_span_till+1)
+#@(label="Skip time points:", description="Period between commands (e.g., every N timepoints)", min="0") int bdv_t_frequency = 1
+bdv_t_frequency += 1
 
-# Toggles
-include_bdv_fcentre = False      # Toggle BDV_Fcentre: requires a spot labeled 'centre' in the Mastodon project.
-                                 # You can generate it by going to the TrackScheme view, selecting all spots and links (Ctrl + A),
-                                 # then using Plugins > Spots management > Transform spots > Add center spots.
-include_bookmarks = False        # Toggle bookmarks
-include_rotation = False         # Toggle rotation
-include_zoom_in = False          # Toggle zoom-in command
-include_zoom_out = False         # Toggle zoom-out command
+# TODO: Here, message in the dialog what happens at every non-skipped time point.
+
+# Toggle BDV_Fcentre: requires a spot labeled 'centre' in the Mastodon project.
+# You can generate it by going to the TrackScheme view, selecting all spots and links (Ctrl + A),
+# then using Plugins > Spots management > Transform spots > Add center spots.
+#@(label="Do BDV_Fcentre:", description="At every time point do this command.") boolean include_bdv_fcentre = False
+
+# TODO: Message that 'centre' spot needs to exist at the visited spots.
+
+#@(label="Do BDV rotations:", description="Include BDV rotations into the generated sequence, or not at all.") boolean include_rotation = False
+#@(label="Rotation with Nth time point:", description="Include BDV_R with every Nth visited time point (1 = every, 2 = every 2nd, etc.)") int rotation_interval = 1
+#@(label="Rotation steps:", description="Use BDV_R<steps> in every BDV_R command in the generated sequence.") int rotation_step = 5
+
+#@(label="Do visit TS bookmarks:", description="Includes TS bookmarks into the generated sequence.") boolean include_bookmarks = False
+#@(label="Number of TS bookmarks:", description="How long sequence of TS_B1 TS_B2 TS_B3... to use per time point.") int max_bookmarks = 3
+
+#@(label="Do TS zoom-in (pos 1 -> 2):", description="Enable/disable zoom-in command in the generated sequence.") boolean include_zoom_in = False
+#@(label="Do TS zoom-out (pos 2 -> 1):", description="Enable/disable zoom-out command in the generated sequence.") boolean include_zoom_out = False
+#@(label="TS zoom position 1:", description="Starting position for zoom-in, ending position for zoom-out.") int zoom_x = 1
+#@(label="TS zoom position 2:", description="Ending position for zoom-in, starting position for zoom-out.") int zoom_y = 3
+#@(label="TS zoom frames:", description="Number of frames for the zoom transition") int zoom_frames = 10
+
+
 
 # Precompute static elements
 zoom_in_command = "TS_Z"+str(zoom_x)+"-"+str(zoom_y)+"-"+str(zoom_frames) if include_zoom_in else ""
