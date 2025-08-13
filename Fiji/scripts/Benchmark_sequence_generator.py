@@ -21,8 +21,8 @@ include_zoom_in = False          # Toggle zoom-in command
 include_zoom_out = False         # Toggle zoom-out command
 
 # Precompute static elements
-zoom_in_command = f"TS_Z{zoom_x}-{zoom_y}-{zoom_frames}" if include_zoom_in else ""
-zoom_out_command = f"TS_Z{zoom_y}-{zoom_x}-{zoom_frames}" if include_zoom_out else ""
+zoom_in_command = "TS_Z"+str(zoom_x)+"-"+str(zoom_y)+"-"+str(zoom_frames) if include_zoom_in else ""
+zoom_out_command = "TS_Z"+str(zoom_y)+"-"+str(zoom_x)+"-"+str(zoom_frames) if include_zoom_out else ""
 
 # Helper: Determine whether this index triggers a BDV_T event
 def is_bdv_t_step(idx):
@@ -38,17 +38,17 @@ for idx, t in enumerate(timepoint_span):
     components = []
 
     # Step 1: BDV_T and optional BDV_Fcentre
-    components.append(f"BDV_T{t}")
+    components.append("BDV_T"+str(t))
     if include_bdv_fcentre:
         components.append("BDV_Fcentre")
 
     # Step 2: Bookmarks
     if include_bookmarks:
-        components.extend([f"TS_B{i}" for i in range(1, max_bookmarks + 1)])
+        components.extend(["TS_B"+str(i) for i in range(1, max_bookmarks + 1)])
 
     # Step 3: Rotation
     if include_rotation and (idx // bdv_t_frequency) % rotation_interval == 0:
-        components.append(f"BDV_R{rotation_step}")
+        components.append("BDV_R"+str(rotation_step))
 
     # Step 4: Zoom commands
     if include_zoom_in:
@@ -67,13 +67,13 @@ with open(output_filename, "w") as f:
     f.write(final_output)
 
 # --- Print Output ---
-print("\n--- ✅ Mastodon Benchmark Sequence (Single Line) ---")
-print("⚠️  Copy the entire line below into Mastodon's benchmark commands field as a single line:")
+print("\n--- Mastodon Benchmark Sequence (Single Line) ---")
+print("Copy the entire line below into Mastodon's benchmark commands field as a single line:")
 print("\n" + final_output)
 
-print("\n--- 📄 Multi-Line View (For Readability Only) ---")
+print("\n--- Multi-Line View (For Readability Only) ---")
 for line in output_elements:
     print(line)
 
-print(f"\n✅ Sequence also saved to: {output_filename}")
+print("\nSequence also saved to: "+output_filename)
 
