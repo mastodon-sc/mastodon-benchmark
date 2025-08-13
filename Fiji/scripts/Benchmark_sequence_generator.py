@@ -30,6 +30,7 @@ bdv_t_frequency += 1
 #@(label="TS zoom position 2:", description="Ending position for zoom-in, starting position for zoom-out.") int zoom_y = 3
 #@(label="TS zoom frames:", description="Number of frames for the zoom transition") int zoom_frames = 10
 
+#@(label="Save generated sequence here:", description="Leave empty to avoid saving to a file.", required="false") string output_filename
 
 
 # Precompute static elements
@@ -73,11 +74,6 @@ for idx, t in enumerate(timepoint_span):
 # Final output (single line for Mastodon)
 final_output = " ".join(output_elements)
 
-# Save to file
-output_filename = "benchmark_sequence.txt"
-with open(output_filename, "w") as f:
-    f.write(final_output)
-
 # --- Print Output ---
 print("\n--- Mastodon Benchmark Sequence (Single Line) ---")
 print("Copy the entire line below into Mastodon's benchmark commands field as a single line:")
@@ -87,5 +83,11 @@ print("\n--- Multi-Line View (For Readability Only) ---")
 for line in output_elements:
     print(line)
 
-print("\nSequence also saved to: "+output_filename)
+if output_filename is not None and len(output_filename) > 0:
+    # Save to file
+    with open(output_filename, "w") as f:
+        f.write(final_output)
+
+    import os
+    print("\nSequence also saved to: "+os.path.abspath(output_filename))
 
