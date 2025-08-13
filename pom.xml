@@ -10,7 +10,7 @@
 
 	<groupId>org.mastodon</groupId>
 	<artifactId>mastodon-benchmark</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.0-SNAPSHOT</version>
 
 	<name>Mastodon Benchmark</name>
 	<description>Language and framework for reproducible benchmarking of Mastodon main displays.</description>
@@ -70,7 +70,7 @@
 		<license.organizationName>Mastodon authors</license.organizationName>
 		<license.copyrightOwners>Vladimir Ulman</license.copyrightOwners>
 
-		<mastodon.version>1.0.0-beta-34-SNAPSHOT</mastodon.version>
+		<mastodon.version>1.0.0-beta-34</mastodon.version>
 		<bigdataviewer-core.version>10.6.4-mastodon-benchmark</bigdataviewer-core.version>
 	</properties>
 
